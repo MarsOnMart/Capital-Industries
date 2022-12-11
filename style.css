@@ -5,6 +5,8 @@
 }
 body,html{
     max-width: 100%;
+    background-color: rgb(236, 236, 236);
+    text-align: center;
 }
 .cont{
     max-height: 103px;
@@ -20,8 +22,9 @@ body,html{
     width: 100% ;
     max-height: 100px;
     height: 100px;
+    
     background-color: rgb(255, 255, 255);
-   border-bottom: 2px rgb(0, 0, 0) solid;
+   
 }
 
 .df{
@@ -118,7 +121,11 @@ main{
 }
 h1{
     font-size: 2.4rem;
+    color: rgb(0, 0, 0);
 
+}
+.pu{
+    color: rgb(0, 0, 0);
 }
 .c-ventas{
     margin: auto;
@@ -130,65 +137,438 @@ h1{
     margin:30px  auto;
     margin-top: 20px;
     max-width: 100%;
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(0, 0, 0);
     display: grid;
     grid-template: 320px /500px 750px  ;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border:rgb(0, 0, 0) thin solid;
+    
+    border:rgb(255, 255, 255) thin solid;
     grid-template-areas:"a  b" ;
 }
 .c-img{
     grid-area: a;
     display: inline-block;
-    
+    max-width: 500px;
+    background-image: url("./logo.webp");
+    text-align: center;
 }
 
 .i-img{
-    max-width: 500px;
+    z-index: 3;
+    width: 100%;
     max-height: 100%;
     height: 100%;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
     display: inline-block;
     
+}
+.c-tittle{
+    z-index: 2;
+    position: relative;
+    margin-top: 155px;;
+    font-size: 1.2rem;
+    display: none;
+    
+}
+.cd{
+    display: block;
 }
 .i-info{
     display: inline-block;
     text-align: justify;
     grid-column:b;
+    color: rgb(255, 255, 255);
     margin: 10px 5px;
 }
 .tittle{
     margin-bottom: 30px;
     margin-left: 20px;
+    letter-spacing: 3px;
 }
 .etiqueta{
 
-    border: solid thin black  ;
+    border: solid thin rgb(0, 0, 0)  ;
     padding: 7px 20px;
     border-radius: 5px;
+    color: rgb(0, 0, 0);
     margin: auto 10px;
+    background-color: rgb(255, 255, 255);
+}
+.precio{
+    font-weight: 100;
+    font-size: 1.2em;
+    display: block;
+    margin: 5px auto;
 }
 .filtros{
     margin-left: 100px;
     transition: 0.3s;
+    z-index: -1;
+    visibility: hidden;
+}
+.show{
+        
+    transform: translateY(0px) ;
+    transition: all 1s;
+   
+    visibility: visible;
+}
+.jkl{
+    position: absolute;
+    color: rgb(0, 0, 0);
+    left:  660px;
+    font-size: 1.4rem;
+    cursor: pointer;
+   
+    transform: rotateX(180deg);
+    transition:all .3s;
+    transform:translate(0px,0px) !important  ;
+    
+}
+.up{
+    transition: 1.5s;
+    left: 660px;
+    transform:translate(0px,-80px)!important  ;
+    
 }
 .filtro{
     margin: 1px 2px;
     display: inline-block; 
+    background-color: rgb(0, 0, 0);
+    border: solid thin rgb(255, 255, 255)  ;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+   
+  
+}
+.filtro:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0) !important;
+    border-radius: 5px;
+    border-color: rgb(0, 0, 0);
+    transition: all .3s;
 }
 .f-button{
+
     border: none;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     margin: 0;
+    color: rgb(0, 0, 0);
     padding: 0;
     cursor: pointer;
 }
 .f-button:hover{
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(0, 0, 0) !important;
     border-radius: 5px;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
     transition: all .3s;
 }
+
+.circle{
+    width: 500px;
+    height  : 500px;
+    transform: translateY(100%);
+    transform: translatex(50%);
+    z-index: -1;
+    top: 0;
+    right: 0;
+    
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#loader{
+    display: flex;
+    top: 0;
+    justify-content: center;
+    position: fixed;
+    z-index: 5;
+    transition: 1s all;
+    width: 100%;
+    height:100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.point{
+    margin: auto 40px;
+    width: 70px; 
+    display: inline-block;
+    height: 70px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    animation: move 3s ease-in-out infinite ;
+}
+
+.p-1{
+    animation-delay:0.4s;
+}
+.p-2{
+    animation-delay:0.8s;
+}
+.p-3{
+    animation-delay:1.2s;
+}
+
+@keyframes move {
+    0%{
+        transform: translateY(0%);
+    }
+   
+    50%{
+        transform: translateY(100%);
+    }
+   
+    100%{
+        transform: translateY(0%);
+    }
+}
+/**    1 hoja: index.html      */
+
+.c-about{
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 10px;
+    display: grid;
+    grid-template:1000px /auto auto auto;
+    color: rgb(0, 0, 0);
+}
+
+.c-about div i {
+    color: rgb(0, 0, 0);
+    
+}
+.abcd{
+    margin: 0 auto;
+    color: rgb(0, 0, 0);
+    font-size: 15rem;
+}
+.c-about div{
+    color: rgb(0, 0, 0) ;
+    max-width: 400px;
+    text-align: center;
+    margin: 10px;
+}
+.a-p{
+    text-align: justify;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+@media screen  and (min-device-width: 430px) and (max-device-width: 480px)
+{ 
+    body,html{
+        max-width: 99vw;
+        width:99vw;
+        background-color: rgb(236, 236, 236);
+        text-align: center;
+    }
+    .cont{
+       
+        max-width: 100vw;
+       
+    }
+    .c-header{
+        display: flex;
+        flex-direction: row;
+        -ms-flex-align: center;
+        flex-wrap: nowrap;
+        align-content: space-between;
+        position: fixed !important;
+        max-width: 100vw;
+        width: 100%;
+        top: 0px;
+        max-height: 100px;
+        height: 100px;
+        z-index: 5;
+        background-color: rgb(255, 255, 255);
+       
+    }
+    .df{
+        display: none;
+    }
+    .Alqui,.Ventas,.info{
+        display: none !important;
+    }
+    
+    .c-search{
+        display: none;
+    }
+    .p-img{
+        display: none !important;
+    }
+
+    .l-img{
+        margin:auto;
+        margin-top:-13px;
+    }
+    main{
+        text-align:initial;
+        margin: 0 0 0 0;
+    }
+    .logo{
+        width: 100%;
+        display: block;
+        margin: 0 0 0 0;
+    }
+    .titulo{
+        margin:auto auto;
+       
+        text-align: center;
+    }
+    h1{
+        margin:auto;
+        font-size: 1.5rem;
+        
+        display: block;
+        z-index: 4;
+    }
+    .pu{
+     
+        
+        z-index: 4;
+        display: block;
+    }
+    .filtros{
+        margin: 0 !important;
+        justify-content: center;
+        visibility: hidden;
+        transform: translateY(-300px) ;
+        z-index: -1;
+    }
+    
+    .show{
+        
+        transform: translateY(0px) ;
+        transition: all 1s;
+       
+        visibility: visible;
+    }
+    .jkl{
+        position: absolute;
+        color: rgb(0, 0, 0);
+        left: 47%;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transform: rotateX(180deg);
+        transition:all .3s;
+    }
+    .up{
+        transition: .7s;
+        transform:translateY(-245px) !important  ;
+        transform: rotateX(360deg);
+    }
+    
+    .c-ventas{
+        margin-top: 10px;
+
+    }
+    .v-up{
+        margin-top: -230px;
+    }
+    .c-ventas{
+        max-width: 95%;
+    }
+    .item{
+        margin:0px  auto;
+        margin-top: 20px;
+        max-width: 100vw;
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        grid-template: 200px 250px / auto  ;
+        
+        border:rgb(255, 255, 255) thin solid;
+        grid-template-areas:"a "   
+                            "b"
+                            "c";
+    }
+    .c-img{
+        grid-area: a;
+        display: inline-block;
+        max-width: 100vw;
+        max-height:100%; ;
+        margin: 0;
+        background-image: url("./logo.webp");
+        text-align: center;
+    }
+    
+    .i-img{
+        z-index: 3;
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+        margin:0;
+        display: inline-block;
+        
+    }
+    .i-info{
+        display: inline-block;
+        text-align: justify;
+        grid-area: b c;
+        color: rgb(255, 255, 255);
+        margin: 10px 5px;
+    }
+    .tit{
+        margin-bottom: 30px;
+        margin-left: 20px;
+        letter-spacing: 3px;
+    }
+    .precio{
+        font-weight: 200;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    #loader{
+        display: flex;
+        top: 0;
+        justify-content: center;
+        position: fixed;
+        z-index: 5;
+        transition: 1s all;
+        width: 100%;
+        height:100vh;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .point{
+        margin: auto 20px;
+        width: 40px; 
+        display: inline-block;
+        height: 40px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        animation: move 3s ease-in-out infinite ;
+    }
+    
+    .p-1{
+        animation-delay:0.4s;
+    }
+    .p-2{
+        animation-delay:0.8s;
+    }
+    .p-3{
+        animation-delay:1.2s;
+    }
+
+}
+    
+/*
+screen= solo para la resolucion de pantallas
+speech = para lectores de pantalla que leen la pagina con voz
+all = para todo tipo de medios
+print = para impresoras
+
+320px - 420px =moviles
+481px - 768px = ipads tablets
+769px - 1024px = mini pantallas de portatil
+1025px - 1200px = escritorios pantallas grandes
+1021px - ++ = para pantallas grandes y televisores 
+*/
